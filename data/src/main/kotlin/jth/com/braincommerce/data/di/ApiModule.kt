@@ -6,7 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import jth.com.braincommerce.data.api.SampleService
+import jth.com.braincommerce.data.api.JobsService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -19,7 +19,7 @@ internal object ApiModule {
     private const val CONNECT_TIMEOUT = 15L
     private const val WRITE_TIMEOUT = 15L
     private const val READ_TIMEOUT = 15L
-    private const val BASE_URL = "https://api.github.com/"
+    private const val BASE_URL = "https://jpassets.jobplanet.co.kr/mobile-config/"
 
     @Provides
     @Singleton
@@ -47,7 +47,7 @@ internal object ApiModule {
 
     @Provides
     @Singleton
-    fun providesService(retrofit: Retrofit): SampleService {
-        return retrofit.create(SampleService::class.java)
+    fun providesService(retrofit: Retrofit): JobsService {
+        return retrofit.create(JobsService::class.java)
     }
 }

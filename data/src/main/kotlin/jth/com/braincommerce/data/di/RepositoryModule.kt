@@ -4,8 +4,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import jth.com.braincommerce.data.repository.SampleRepository
-import jth.com.braincommerce.data.repository.SampleRepositoryImpl
+import jth.com.braincommerce.data.repository.JobsRepository
+import jth.com.braincommerce.data.repository.JobsRepositoryImpl
 import javax.inject.Singleton
 
 @Module
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 abstract class RepositoryModule {
     @Singleton
     @Binds
-    abstract fun bindsSampleRepository(
-        localSource: SampleRepositoryImpl
-    ): SampleRepository
+    abstract fun bindsJobsRepository(
+        localSource: JobsRepositoryImpl
+    ): JobsRepository
 }

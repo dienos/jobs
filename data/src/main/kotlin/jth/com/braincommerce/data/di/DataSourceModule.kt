@@ -4,10 +4,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import jth.com.braincommerce.data.datasource.local.SampleLocalSource
-import jth.com.braincommerce.data.datasource.local.SampleLocalSourceImpl
-import jth.com.braincommerce.data.datasource.remote.SampleRemoteSource
-import jth.com.braincommerce.data.datasource.remote.SampleRemoteSourceImpl
+import jth.com.braincommerce.data.datasource.remote.JobsRemoteSource
+import jth.com.braincommerce.data.datasource.remote.JobsRemoteSourceImpl
 import javax.inject.Singleton
 
 @Module
@@ -15,9 +13,5 @@ import javax.inject.Singleton
 abstract class DataSourceModule {
     @Singleton
     @Binds
-    abstract fun bindsSimpleRemoteSource(source: SampleRemoteSourceImpl): SampleRemoteSource
-
-    @Singleton
-    @Binds
-    abstract fun bindsSimpleLocalSource(source: SampleLocalSourceImpl): SampleLocalSource
+    abstract fun bindsJobsRemoteSource(source: JobsRemoteSourceImpl): JobsRemoteSource
 }
