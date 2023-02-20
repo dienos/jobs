@@ -4,21 +4,21 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import jth.com.braincommerce.data.repository.SampleRepositoryImpl
-import jth.com.braincommerce.domain.usecase.GetLocalSampleUseCase
-import jth.com.braincommerce.domain.usecase.GetSampleUseCase
+import jth.com.braincommerce.data.repository.JobsRepositoryImpl
+import jth.com.braincommerce.domain.usecase.GetCellsUseCase
+import jth.com.braincommerce.domain.usecase.GetRecruitsUseCase
 
 @Module
 @InstallIn(ViewModelComponent::class)
 object UseCaseModule {
 
     @Provides
-    fun providesGetSampleUseCase(repository: SampleRepositoryImpl): GetSampleUseCase {
-        return GetSampleUseCase(repository)
+    fun providesGetRecruitsUseCase(repository: JobsRepositoryImpl): GetRecruitsUseCase {
+        return GetRecruitsUseCase(repository)
     }
 
     @Provides
-    fun providesGetLocalSampleUseCase(repository: SampleRepositoryImpl): GetLocalSampleUseCase {
-        return GetLocalSampleUseCase(repository)
+    fun providesGetCellsUseCase(repository: JobsRepositoryImpl): GetCellsUseCase {
+        return GetCellsUseCase(repository)
     }
 }
